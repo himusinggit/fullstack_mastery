@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.wrapper{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rgb(0, 6, 36); */
+    background-image:linear-gradient(rgba(19, 115, 0, 0.167),rgba(255, 0, 0, 0.199)),url("https://preview.redd.it/cool-wallpapers-v0-m4bdi3jghkvb1.png?width=1080&crop=smart&auto=webp&s=cbb16aa142ba9b0ecaa89c281b817efe12c2e1a9");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment:fixed;
+}
+p{
+    font-size:5em;
+    font-family: "Bytesized", sans-serif;
+    text-align: center;
+    color:white
+}
+#wrapper2{
+    background-image: radial-gradient(rgba(193, 77, 0, 0.283),rgba(185, 0, 195, 0.342)),url(https://plus.unsplash.com/premium_photo-1661878091370-4ccb8763756a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}

@@ -5,6 +5,8 @@ relative size{
     % - related to size of parent element
     em - relative to parent element
     rem - relative to root element (html)
+    vw - viewport width percent
+    vh - viewport height percent
 }
 font{
     line-height - space between two lines
@@ -13,4 +15,28 @@ font{
     text-align - left, center, right;
     text-decoration - underline, overline, line-through, none;  // for <a> tag
     text-transform - uppercase, lowercase, capitalize;
+}
+
+google fonts{
+    go to google fonts and copy the @import and paste it in <style> tag
+    now use desired font family it is present in most lower or below the google font screen
+}
+background-image{
+    background-position - top, bottom, left, right or center;
+    background-size - cover, contain;
+    background-repeat - repeat, repeat-x, repeat-y, no-repeat;
+    background-attachment - fixed, scroll; // for parralax effect cool
+    background-image:gradient(c1,c2),url();   // cool stuff
+
+}
+filter{
+    filter:blur(value in %);
+    filter:brightness(value in %);
+    filter:contrast(value in %);
+    filter:grayscale(value in %);
+    filter:invert(value in %);
+    filter:opacity(value in %);
+    filter:saturate(value in %);
+    filter:sepia(value in %);
+    filter:hue-rotate(value in deg);
 }
