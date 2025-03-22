@@ -1,0 +1,16 @@
+absolute size{
+    px-size in pixels
+}
+relative size{
+    % - related to size of parent element
+    em - relative to parent element
+    rem - relative to root element (html)
+}
+font{
+    line-height - space between two lines
+    letter-spacing - space between two letters
+    word-spacing - space between two words
+    text-align - left, center, right;
+    text-decoration - underline, overline, line-through, none;  // for <a> tag
+    text-transform - uppercase, lowercase, capitalize;
+}

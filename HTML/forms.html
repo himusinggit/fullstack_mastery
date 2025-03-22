@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .timer{
+        box-sizing: border-box;
+        padding: 20px;
+        width:500px;
+        height: 200px;
+        color: white;
+        background-color: black;
+        font-size: 50px;
+        border-radius: 20px;
+    }
+</style>
+<body>
+    <form action="get">
+        hello my name is <abbr title="himanshu sharma">himansh</abbr>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <input type="submit" value="Submit">
+        <input class="colors" type="color">
+        <input type="file">
+        <input type="range">
+        <br>
+        <input class="timer" type="time">
+    </form>
+    <script>
+        document.querySelector('.colors').onchange=(e)=>{
+        console.log(e.target.value);    
+        }
+        
+    </script>
+</body>
+</html>
