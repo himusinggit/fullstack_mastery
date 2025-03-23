@@ -5,6 +5,20 @@
     box-sizing: border-box;
     overflow-x: hidden;
 }
+.page{
+    width: 100vw;
+    height: 100vh;
+    background-color: teal;
+    
+}
+.p2{
+    background-color: crimson;
+    /* padding: 2em; */
+    display: grid;
+    grid-template-rows:100px 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px 100px;
+    
+}
 .wrapper{
     display: flex;
     width: 100vw;
@@ -24,6 +38,27 @@ p{
     text-align: center;
     color:white
 }
-#wrapper2{
+.two{
     background-image: radial-gradient(rgba(193, 77, 0, 0.283),rgba(185, 0, 195, 0.342)),url(https://plus.unsplash.com/premium_photo-1661878091370-4ccb8763756a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+}
+
+.elem{
+    width: 5em;
+    height: 5em;
+}
+.eone{
+    background-color: red;
+}
+.etwo{
+    background-color: blue;
+}
+.ethree{
+    background-color: green;
+}
+
+.s{
+    padding: 20px;
+    background-color: aqua;
+    /* margin: 10px; */
+    text-align: center;
 }

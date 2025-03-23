@@ -13,7 +13,7 @@ font{
     letter-spacing - space between two letters
     word-spacing - space between two words
     text-align - left, center, right;
-    text-decoration - underline, overline, line-through, none;  // for <a> tag
+    text-decoration - underline, overline, line-through, none;                  // for <a> tag
     text-transform - uppercase, lowercase, capitalize;
 }
 
@@ -25,8 +25,8 @@ background-image{
     background-position - top, bottom, left, right or center;
     background-size - cover, contain;
     background-repeat - repeat, repeat-x, repeat-y, no-repeat;
-    background-attachment - fixed, scroll; // for parralax effect cool
-    background-image:gradient(c1,c2),url();   // cool stuff
+    background-attachment - fixed, scroll;                          // for parralax effect cool
+    background-image:gradient(c1,c2),url();                         // cool stuff
 
 }
 filter{
@@ -39,4 +39,60 @@ filter{
     filter:saturate(value in %);
     filter:sepia(value in %);
     filter:hue-rotate(value in deg);
+}
+pseudo-selectors{
+    :hover - do something on mouse hover on element
+    :active - do something on mouse click on element
+    :focus - do something on focus                                          // used in input tag
+    :link  - it defines how <a> looks when unvisited
+    :visited - it defines how <a> looks when visited
+}
+
+display{
+    display:block - display as block element takes width and height
+    display:inline - display as inline element does not take width and height
+    display:inline-block - display as inline block element takes width and height
+}
+
+shadow{
+    box-shadow: 5px 5px blue, 10px 10px red, 15px 15px green;
+    box-shadow: h-shadow v-shadow blur-radius color inset;
+    text-shadow: h-shadow v-shadow blur-radius color;
+}
+
+* class{
+    for providing css class to any html element  we can provide multiple classes separated by space
+    ex: <div class="class1 class2 class3">
+    now this div will have three classes class1, class2 and class3
+}
+
+position{
+    relative - allows us to move the respective element to anywhere but its real space is not taken
+    absolute - allows us to move the respective element to anywhere but its real space is taken
+    fixed - allows us to move the respective element to anywhere but its real space is taken
+}
+
+flexbox{
+    flex-direction - row, row-reverse, column, column-reverse;
+    flex-wrap - wrap, wrap-reverse, nowrap;
+    justify-content - flex-start, flex-end, center, space-between, space-around, space-evenly;
+    align-items - stretch, flex-start, flex-end, center, baseline;
+
+    element specific:
+    
+    order - it is applied to specific element to change its order of appearing in flexbox
+    align-self - it is applied to specific element to change its position in flexbox in perpendicular direction
+    flex-grow - it is applied to specific element to let it grow respective to other elements default 0;
+    flex-shrink - it is applied to specific element to let it shrink respective to other elements default 1;
+}
+
+grid{
+    grid line line used to seprate two rows or columns
+    grid track one complete row or column or space between two grid lines
+    grid cell one cell in grid
+     ___________________________
+    |________|_________|________|
+    |________|_________|________|
+    |________|_________|________|
+    |________|_________|________|
 }

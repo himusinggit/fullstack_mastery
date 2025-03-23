@@ -1,2 +1,2 @@
 gradient:https://webgradients.com/
-icons:https://remixicon.com/
+icons:https://remixicon.com/   /   https://fontawesome.com
