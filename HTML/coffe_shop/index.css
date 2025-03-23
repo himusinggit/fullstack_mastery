@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+    color:white;
+}
+.page{
+    width: 100%;
+    height: 100dvh;
+    background-color: rgb(0, 0, 0);
+    padding:1em 5em;
+}
+.header{
+    width: 100%;
+    height: 5em;
+    /* background-color: red; */
+}
+.nav{
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.side_menue{
+    display: flex;
+    gap:7em;
+    font-family: calibri;
+    font-weight: 600;
+    font-size:1.05em;
+}
+.logo{
+    font-size: 3em;
+    font-family: "Playwrite HU", cursive;
+}
+.main{
+    width: 100%;
+    height: calc(100% - 5em);
+    position: relative;
+    /* background-color: aquamarine; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5em;
+
+}
+.coffee_cup{
+width: 50%;
+height: 50%;
+/* background-color: red; */
+background-image: url(https://github.com/HuXn-WebDev/HTML-CSS-JavaScript-100-Projects/blob/main/92.%20Coffee/Images/3.png?raw=true);
+background-size:contain;
+background-repeat: no-repeat;
+background-position: center;
+}
+.main h1,h2{
+    font-size: 5em;
+}
+
+.p2{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    padding: 0.5em;
+    align-items: center;
+}
+.p2 .submit_btn{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 10em;
+    height: 3.2em;
+    border-radius: 5px;
+    background-color: rgb(198, 129, 0);   
+}
+.p2 .container{
+    display: flex;
+    width:100%;
+    height: 40em;
+    background-color: pink;
+}
+.p2 .container .photo{
+    height:40em;
+    width: 40em;
+    background-color: red;
+    flex-shrink: 0;
+}
+.p2 .container .textshit .texter{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.p2 .container .textshit .texter h1{
+    font-size: 5em;
+}
+.p2 .container .textshit .texter h2{
+    font-size: 1em;
+}
+.p2 .container .textshit .texter::before{
+    display: inline-block;
+    content: '';
+    width: 2rem;
+    height: 0.02rem;
+    background-color: green;
+}

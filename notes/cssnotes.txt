@@ -90,9 +90,56 @@ grid{
     grid line line used to seprate two rows or columns
     grid track one complete row or column or space between two grid lines
     grid cell one cell in grid
+
+    minmax(minimum size, maximum size) - it is used to set minimum and maximum size of grid cell
+    example :-grid-template-column:1fr minmax(200px,1fr) 1fr;
+    now middle column can be of minimum 200px and maximum 1fr
+
+    auto-fit - it is used to automatically fit grid cell in grid
+    auto-fill - it is used to automatically fill grid cell in grid
      ___________________________
     |________|_________|________|
     |________|_________|________|
     |________|_________|________|
     |________|_________|________|
+
+    element inside grid specific:
+    grid-row: 1/3 -> this element will span from grid line 1 to 3 in rows
+    grid-column: 1/3 -> this element will span from grid line 1 to 3 in columns
+
+    all flexbox properties also work in it
+
+
+
+    grid area{
+        go inside every element of grid
+        set grid-area = any word or letter
+
+        now inside container grid set each item according to you using
+        grid-template-areas:
+        "h h h"
+        "m m m"
+        "f f f";
+        use . for empty cell in grid
+    }
+}
+
+grid-area for shorthanding grid-column , grid-row{
+    grid-area: row-start/column-start/row-end/column-end;
+} 
+
+:is() - it is used to select multiple elements at once
+:not() - it is used to select multiple elements at once skipping some elements
+
+
+@mdia queries{
+    @media screen and (max-width:600px){
+        body{
+            background-color: red;
+        }
+    }
+}
+
+html{
+    scroll-behavior: smooth;
 }

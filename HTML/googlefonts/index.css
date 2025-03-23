@@ -1,24 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Bytesized&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Winky+Sans:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+html{
+    scroll-behavior: smooth;
+}
 *{
     margin:0;
     padding:0;
     box-sizing: border-box;
     overflow-x: hidden;
 }
+
 .page{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-color: teal;
     
 }
-.p2{
-    background-color: crimson;
-    /* padding: 2em; */
-    display: grid;
-    grid-template-rows:100px 100px 100px 100px;
-    grid-template-columns: 100px 100px 100px 100px;
-    
-}
+
 .wrapper{
     display: flex;
     width: 100vw;
@@ -56,9 +53,103 @@ p{
     background-color: green;
 }
 
-.s{
+
+
+.p2{
+    background-color: crimson;
+    padding: 0.5em;
+    display: grid;
+    grid-template-rows:repeat(5,1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-gap:0.5em 0.5em;
+}
+.p2 .s{
     padding: 20px;
     background-color: aqua;
     /* margin: 10px; */
     text-align: center;
+}
+.p2 .main{
+    grid-row: 2/4;
+    grid-column: 1/4;
+}
+
+.p2 .header{
+    grid-column: 1/4;
+}
+.p2 .aside{
+    grid-column: 3;
+}
+.p2 .footer{
+ grid-column: 1/4;
+}
+
+
+.p3 .s{
+    padding: 20px;
+    background-color: red;
+    /* margin: 10px; */
+    text-align: center;
+}
+.p3{
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(82, 246, 0);
+    padding: 0.5em;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 3em;
+    grid-template-areas: 
+    "h h h"
+    "n m m"
+    "a m m"
+    "f f f";
+}
+.p3 .header{grid-area: h;}
+.p3 .nav{grid-area: n;}
+.p3 .main{grid-area: m;}
+.p3 .aside{grid-area: a;}
+.p3 .footer{grid-area: f;}
+
+
+
+
+.p4{
+    
+    background-color: rgb(0, 203, 180);
+    
+}
+.p4 .img{
+    width: 100%;
+    height: 100%;
+    background-image: url(https://images.unsplash.com/photo-1709884735017-114f4a31f944?q=80&w=2129&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: center;
+    /* mix-blend-mode: luminosity; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.p4 .img .coolbox{
+    width: 20em;
+    height: 40em;
+    overflow: visible;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    
+    /* backdrop-filter: blur(3px); */
+    border-radius:20px ;
+    z-index: 100;
+    /* z-index: 2; */
+}
+.p4 .img .coolbox::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    border-radius: 20px;
+    width: 110%;
+    height: 105%;
+    transform: translate(-5%,-1.25%);
+    background-image: linear-gradient(rgba(255, 0, 0, 0.1),cyan);
 }
