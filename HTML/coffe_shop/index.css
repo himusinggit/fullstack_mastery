@@ -56,7 +56,11 @@ background-position: center;
 .main h1,h2{
     font-size: 5em;
 }
-
+.photo{
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 1em;
+}
 .p2{
     display: flex;
     flex-direction: column;
@@ -73,36 +77,41 @@ background-position: center;
     border-radius: 5px;
     background-color: rgb(198, 129, 0);   
 }
+
 .p2 .container{
-    display: flex;
-    width:100%;
-    height: 40em;
-    background-color: pink;
-}
-.p2 .container .photo{
-    height:40em;
-    width: 40em;
-    background-color: red;
-    flex-shrink: 0;
-}
-.p2 .container .textshit .texter{
+    display:grid;
+    grid-template-columns: 40em 1fr 3.5fr;
+    height: 30em;
     width: 100%;
-    height: 100%;
-    background-color: red;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    /* background-color: red; */
 }
 .p2 .container .textshit .texter h1{
-    font-size: 5em;
+    font-size:6em;
 }
 .p2 .container .textshit .texter h2{
-    font-size: 1em;
+    font-size: 1.3em;
+    margin-top: 1em;
+    font-family: calibri;
 }
-.p2 .container .textshit .texter::before{
-    display: inline-block;
-    content: '';
-    width: 2rem;
-    height: 0.02rem;
-    background-color: green;
+.texter{
+    padding-right: 3em;
+    padding-top: 5em;
+}
+.line{
+    width: 80%;
+    margin-left:1em;
+    height: 0.2em;
+    background-color: cyan;
+    position: relative;
+    top:8.5em;
+}
+.mybtn{
+    background-color: rgb(232, 151, 0);
+    margin-top: 1em;
+    
+}
+
+.myimg{
+    width: 40em;
+    border-radius: 15px;
 }

@@ -1,17 +1,8 @@
-import React, { useState } from 'react'
-import Todocontext from '../context/Todocontext';
-import { useContext } from 'react';
+import React from 'react'
+
 function NewTodo({todo}) {
-    const {updateTodo,deleteTodo,toggleComplete}=useContext(Todocontext);
-    const [todoMessage, setTodoMeassage] = useState(todo.message);
-    const [isEditable, setIsEditable] = useState(false);
-    const editTodo=()=>{
-        updateTodo(todo.id,{...todo,message:todoMessage});
-        setIsEditable(false);
-    }
     return (
-        <>
-            <div className={`${(todo.completed)?"bg-green-300":"bg-gray-300"} h-10 w-200 rounded-xl flex items-center gap-2 text-black p-2`}>
+         <div className={`${(todo.completed)?"bg-green-300":"bg-gray-300"} h-10 w-200 rounded-xl flex items-center gap-2 text-black p-2`}>
                 <input type="checkbox" id="" value={todo.completed} onChange={()=>{toggleComplete(todo.id)}} />
                 <input type='text' value={todoMessage} onChange={(e)=>setTodoMeassage(e.target.value)} readOnly={!isEditable} className={`${(todo.completed)?"line-through":""}`} />
                 < i className={`${(isEditable)?"ri-save-line":"ri-edit-line"}`} onClick={()=>{
@@ -21,8 +12,7 @@ function NewTodo({todo}) {
                     }}></i>
                 <i className="ri-delete-bin-line" onClick={()=>{deleteTodo(todo.id)}}></i>
             </div>
-        </>
     )
 }
 
-export default NewTodo;
+export default NewTodo

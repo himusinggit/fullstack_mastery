@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    <link rel="stylesheet" href="stylesheets/index.css">
+</head>
+<body>
+    <div class="menuremover"></div>
+    <div class="loader">    </div>
+    <div class="page p1">
+        <div class="nav">
+            <div class="logo">STARCOFFEE</div>
+            <div class="menue"><i class="ri-menu-2-line"></i>
+            <!-- <div class="pcmenu">
+                <h2>home</h2>
+                <h2>about</h2>
+                <h2>product</h2>
+                <h2>contact</h2>
+            </div> -->
+            </div>
+            
+        </div>
+        <div class="hero">
+            <div class="text">COLD COFFEE</div>
+            <div class="wrap">
+                <div class="piece"></div>
+                <img class="img1" src="https://github.com/bedimcode/responsive-coffee-website-3/blob/main/assets/img/home-coffee.png?raw=true" alt="">
+                <img class="img2" src="https://github.com/bedimcode/responsive-coffee-website-3/blob/main/assets/img/home-splash.png?raw=true" alt="">
+            </div>
+            <div class="loremtext">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum aspernatur cum iste quas perspiciatis inventore veniam recusandae. Tempore, iure odio.</div>
+            <div class="btn">Learn More</div>
+
+            <div class="real_menu">
+                <h2>home</h2>
+                <h2>about</h2>
+                <h2>product</h2>
+                <h2>contact</h2>
+            </div>
+        </div>
+    </div>
+    <div class="page p2"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+ <script>
+    window.onload=()=>{
+    document.querySelector('.loader').style.display='none';
+    document.querySelector('.ri-menu-2-line').onclick=()=>{
+        document.querySelector('.real_menu').style.transform='translatey(0%)';
+        document.querySelector('.menuremover').style.transform='translatey(0%)';
+    }
+    document.querySelector('.menuremover').onclick=()=>{
+        document.querySelector('.real_menu').style.transform='translatey(-100%)';
+        document.querySelector('.menuremover').style.transform='translatey(-100%)';  
+    }
+    let tl = new gsap.timeline();
+    tl.from('.text', {y:-100,opacity:0,duration:0.5});
+    tl.from('.img1', {y:-100,opacity:0,duration:0.5});
+    gsap.from('.img2', {y:10,width:20,opacity:0,duration:0.5,delay:0.6});
+    gsap.from('.loremtext', {y:10,opacity:0,duration:0.5,delay:0.8});
+    gsap.from('.btn', {y:10,opacity:0,duration:0.5,delay:1});
+}
+ </script>
+</body>
+</html>

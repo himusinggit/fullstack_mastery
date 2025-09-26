@@ -1,0 +1,101 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    color: white;
+    font-family: calibri;
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(5, 0, 20);
+}
+.chessboard{
+    display: flex;
+    position: absolute;
+
+    flex-wrap: wrap;
+    width: 40rem;
+    flex-shrink: 0;
+    height: 40rem;
+    overflow: hidden;
+    border-radius: 3px;
+}
+.white{
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(255, 252, 232, 0.89);
+}
+.black{
+    width: 5rem;
+    height: 5rem;
+    background-color: #017401;
+}
+.ques{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+.ques h1{
+    color:rgb(255, 255, 255);
+    font-size: 8rem;
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+.content{
+    position: relative;
+    width: 61rem;
+    height: 40rem;
+    display: flex;
+    gap:1rem;
+    border-radius: 3px;
+    overflow: hidden;
+    align-items: center
+}
+
+.controls{
+    width: 22rem;
+    margin-left: 41rem;
+    height: 100%;
+    background-color: rgb(61, 60, 60);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0rem;
+    justify-content: space-around;
+}
+.score{
+    width:80%;
+    height: 4rem;
+    background-color: rgb(84, 83, 83);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.timer{
+    width:80%;
+    height: 8rem;
+    background-color: rgb(84, 83, 83);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn {
+    width: 70%;
+    height: 4rem;
+    background-color: rgb(15, 179, 0);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.block:hover{
+    background-color: blue;
+}
