@@ -1,26 +1,44 @@
 import React from 'react'
-import Logout from './Logout'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import {Logout,Logo,Container} from '../index'
 function Header() {
     const authStatus=useSelector((state)=>state.auth.status);
-    const naveigate=useNavigate();
-    const navItems=[
-        {name:"Home",slug:"/",active:authStatus},
-        {name:"login",slug:"/",active:!authStatus},
-        {name:"signup",slug:"/",active:!authStatus},
-        {name:"addPost",slug:"/",active:authStatus},
-        {name:"allPosts",slug:"/",active:authStatus},
-
-    ];
+    const navigate=useNavigate();
+ const navItems = [
+    {
+      name: 'Home',
+      slug: "/",
+      active: true
+    }, 
+    {
+      name: "Login",
+      slug: "/login",
+      active: !authStatus,
+  },
+  {
+      name: "Signup",
+      slug: "/signup",
+      active: !authStatus,
+  },
+  {
+      name: "All Posts",
+      slug: "/allposts",
+      active: authStatus,
+  },
+  {
+      name: "Add Post",
+      slug: "/addpost",
+      active: authStatus,
+  },
+  ]
     return (
         <Container>
             <Logo />
             <nav>
-                <ul>
+                <ul className='flex gap-3 text-white'>
                 {navItems.map(item=>(item.active && (
-                    <li key={item.name}><button className='p-3 bg-gray-800' onClick={()=>{naveigate(item.slug)}}>{item.name}</button></li>
+                    <li key={item.name}><button className='p-3 bg-gray-800' onClick={()=>{navigate(item.slug)}}>{item.name}</button></li>
                 )))}
                 {authStatus && (
                     <Logout />

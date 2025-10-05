@@ -8,12 +8,12 @@ function Protected({children,authentication=true}) {
     const authStatus=useSelector(state=>state.auth.status);
     useEffect(()=>{
         //TODO: make it easier
-        if(authStatus){
-            navigate('/');
-        }
-        else if(!authStatus){
-            navigate('/login');
-        }
+        // if(authStatus){
+        //     navigate('/');
+        // }
+        // else if(!authStatus){
+        //     navigate('/login');
+        // }
         if(authentication && authStatus !==authentication){
             navigate("/login");
         }
@@ -27,4 +27,4 @@ function Protected({children,authentication=true}) {
     )
 }
 
-export default AuthLayout
+export default Protected

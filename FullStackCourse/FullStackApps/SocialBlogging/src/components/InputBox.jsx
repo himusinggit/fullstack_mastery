@@ -7,7 +7,7 @@ function InputBox({label,type='text',className='',ref,...props}) {
             {label && (
                 <div>
                     <label htmlFor={id}>{label}</label>
-                    <input type={type} id={id} className={className} {...props} ref={ref} />
+                    <input type={type} id={id} className={`${className} bg-slate-100`} {...props} ref={ref} />
                 </div>
             )}
         </div>

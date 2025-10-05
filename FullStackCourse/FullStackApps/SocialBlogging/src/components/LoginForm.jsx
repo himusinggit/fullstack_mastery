@@ -14,9 +14,10 @@ function LoginForm() {
         setErrors("");
         console.log(data);
         try {
-            const session=await authService.authLogin(data);
+            const session=await authService.login(data);
             if(session){
                 const userData=await authService.getUser();
+                
                 if(userData){
                     dispatch(authLogin(userData));
                     navigate('/'); 
@@ -31,8 +32,8 @@ function LoginForm() {
         <div className=''>
             {errors && (<p>{errors}</p>)}
             <form action="" onSubmit={handleSubmit(login)}>
-                <Input label="Email:" type="email" placeholder="Email" {...register("email"),{required:true,pattern:{value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,message: "Invalid email format"}}} ></Input>
-                <Input label="Password:" type="password" placeholder="Password" {...register("password"),{required:true}}></Input>
+                <Input label="Email:" type="email" placeholder="Email"  {...register("email",{required:true,pattern:/^[^\s@]+@[^\s@]+\.[^\s@]+$/})} ></Input>
+                <Input label="Password:" type="password" placeholder="Password" {...register("password",{required:true})}></Input>
                 <Button type="submit">Login</Button>
             </form>
         </div>

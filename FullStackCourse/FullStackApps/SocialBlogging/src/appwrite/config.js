@@ -6,16 +6,16 @@ class Service{
     storage;
     constructor(){
         this.client.setEndpoint(conf.appwriteUrl).setProject(conf.appwriteProjectId);
-        tablesDB = new TablesDB(client);
-        storage = new Storage(client);
+        this.tablesDB = new TablesDB(this.client);
+        this.storage = new Storage(this.client);
     }
-    async createRow(slug,{title,content,featuredImages,status,userId}){
+    async createRow({slug,title,content,featuredImage,status,userId}){
         try {
-            return await tablesDB.createRow({
+            return await this.tablesDB.createRow({
                 databaseId: conf.appwriteDatabaseId,
                 tableId: conf.appwriteTableId,
                 rowId: slug,
-                data: { 'title':title,'content':content,'featuredImages':featuredImages,'status':status,'userId':userId }, // { title,content,'featuredImages,status,userId }
+                data: { 'title':title,'content':content,'featuredImage':featuredImage,'status':status,'userId':userId }, // { title,content,'featuredImages,status,userId }
             });
         } catch (error) {
             console.log(error);
@@ -23,7 +23,7 @@ class Service{
     }
     async updateRow(slug,{title,content,featuredImages,status}){
         try {
-            return await tablesDB.updateRow({
+            return await this.tablesDB.updateRow({
                 databaseId: conf.appwriteDatabaseId,
                 tableId: conf.appwriteTableId,
                 rowId: slug,
@@ -35,7 +35,7 @@ class Service{
     }
     async deleteRow(slug){
         try {
-            await tablesDB.deleteRow({
+            await this.tablesDB.deleteRow({
                 databaseId: conf.appwriteDatabaseId,
                 tableId: conf.appwriteTableId,
                 rowId: slug
@@ -48,7 +48,7 @@ class Service{
     }
     async getRow(slug){
         try {
-            return await tablesDB.getRow({
+            return await this.tablesDB.getRow({
                 databaseId: conf.appwriteDatabaseId,
                 tableId: conf.appwriteTableId,
                 rowId: slug,
@@ -59,7 +59,7 @@ class Service{
     }
     async getRows(querries=[Query.equal('status','active')]){
         try {
-            return  await tablesDB.listRows({
+            return  await this.tablesDB.listRows({
                 databaseId: conf.appwriteDatabaseId,
                 tableId: conf.appwriteTableId,
                 queries: querries 
@@ -71,7 +71,7 @@ class Service{
     }
     async uploadFile(file){
         try {
-            return await storage.createFile({
+            return await this.storage.createFile({
                 bucketId: conf.appwriteBucketId,
                 fileId: ID.unique(),
                 file: file
@@ -83,7 +83,7 @@ class Service{
     }
     async deleteFile(fileId){
         try {
-            await storage.deleteFile({
+            await this.storage.deleteFile({
                 bucketId: conf.appwriteBucketId,
                 fileId: fileId
             });
@@ -95,7 +95,7 @@ class Service{
     }
     getFilePreview(fileId){
         try {
-            return storage.getFilePreview({
+            return this.storage.getFileView({
                 bucketId: conf.appwriteBucketId,
                 fileId: fileId,
             });

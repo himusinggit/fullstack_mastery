@@ -8,9 +8,18 @@ class AuthService{
         this.client.setEndpoint(conf.appwriteUrl).setProject(conf.appwriteProjectId); 
         this.account = new Account(this.client);
     }
+    async login({email,password}){
+
+        try {
+        const User = await this.account.createEmailPasswordSession({email,password});
+        return User;
+        } catch (error) {
+            throw error;
+        }
+    }
     async createAccount({name,email,password}){
         try {
-            const userAccount=await account.create({
+            const userAccount=await this.account.create({
                         userId: ID.unique(),
                         email: email,
                         password: password,
@@ -25,16 +34,9 @@ class AuthService{
         } catch (error) {
             throw error;
         }
+        
     }
-    async login({email,password}){
 
-        try {
-        const User = await account.createEmailPasswordSession({email,password});
-        return User;
-        } catch (error) {
-            throw error;
-        }
-    }
     async getUser(){
         try{
             return await this.account.get();
@@ -45,7 +47,7 @@ class AuthService{
     }
     async logout(){
         try{
-            return await account.deleteSessions();
+            return await this.account.deleteSessions();
         }catch(error){
             throw error;
         }
