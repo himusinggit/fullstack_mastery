@@ -1,0 +1,14 @@
+node js
+javascript runtime environment
+js runtime environment: software that provides a set of tools and libraries for executing javascript code
+
+
+//var let const
+const: stores data and make it immutable variable
+let: stores data but it is mutable
+var: similar to let but not used preferrably
+
+difference between var and let
+.)var has a problem with scope so it means it is not defined according to scope so it can be accessed
+  outside of its declaration block scope as well
+.)let solves this block scope problem of var and is better and new

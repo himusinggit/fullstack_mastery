@@ -15,11 +15,13 @@ function PostForm({post}) {
         const userData=useSelector((state)=>state.auth.userData);
         const submit=async (data)=>{
             if(post){
-                const file=await data.image[0]?appwriteService.uploadFile(data.image[0]):null;
+                const file=data.image[0]?await appwriteService.uploadFile(data.image[0]):null;
                 if(file){
-                    const deletedFile=await appwriteService.deleteFile(post.featuredImages);
+                    console.log(post.featuredImage);
+                    const deletedFile=await appwriteService.deleteFile(post.featuredImage);
                 }
-                const updatedPost=await appwriteService.updateRow(post.$id,{...data,featuredImages:file?file.$id:{...data,featuredImages:undefined}})
+                //todo:make this better cause it have a bug that if we dont put new image it still forgets its id
+                const updatedPost=await appwriteService.updateRow(post.$id,{...data,featuredImage:file?file.$id:undefined});
                     
                     if(updatedPost){
                         navigate(`/post/${updatedPost.$id}`);

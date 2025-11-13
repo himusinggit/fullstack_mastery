@@ -16,10 +16,10 @@ export default function Post() {
 
     useEffect(() => {
         if (slug) {
-            appwriteService.getRow(slug).then((post) => {
-                if (post) {
-                    setPost(post);
-                    console.log(post);
+            appwriteService.getRow(slug).then((res) => {
+                if (res) {
+                    setPost(res);
+                    
                 }
                 else navigate("/");
             });
@@ -27,7 +27,7 @@ export default function Post() {
     }, [slug, navigate]);
 
     const deletePost = () => {
-        appwriteService.deletePost(post.$id).then((status) => {
+        appwriteService.deleteRow(post.$id).then((status) => {
             if (status) {
                 appwriteService.deleteFile(post.featuredImage);
                 navigate("/");
@@ -47,7 +47,7 @@ export default function Post() {
 
                     {isAuthor && (
                         <div className="absolute right-6 top-6">
-                            <Link to={`/edit-post/${post.$id}`}>
+                            <Link to={`/editpost/${post.$id}`}>
                                 <Button bgColor="bg-green-500" className="mr-3">
                                     Edit
                                 </Button>

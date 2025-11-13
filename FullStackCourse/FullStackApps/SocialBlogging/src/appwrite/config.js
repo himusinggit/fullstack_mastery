@@ -21,13 +21,13 @@ class Service{
             console.log(error);
         }
     }
-    async updateRow(slug,{title,content,featuredImages,status}){
+    async updateRow(slug,{title,content,featuredImage,status}){
         try {
             return await this.tablesDB.updateRow({
                 databaseId: conf.appwriteDatabaseId,
                 tableId: conf.appwriteTableId,
                 rowId: slug,
-                data: {'title':title,'content':content,'featuredImages':featuredImages,'status':status}, // optional
+                data: {'title':title,'content':content,'featuredImage':featuredImage,'status':status}, // optional
             });
         } catch (error) {
             throw error;

@@ -17,7 +17,7 @@ function Home() {
     }
     return (
         <div>
-            {posts && posts.map(post=>(<div key={post.$id}><PostCard $id={post.$id} title={post.title} featuredImage={post.featuredImages} /></div>))}
+            {posts && posts.map(post=>(<div key={post.$id}><PostCard $id={post.$id} title={post.title} featuredImage={post.featuredImage} /></div>))}
         </div>
     )
 }
